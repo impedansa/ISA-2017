@@ -1,0 +1,81 @@
+<div class="container-fluid" style="margin-left: 33%;margin-top: 10%">
+  <div class="row">
+    <div class="col-md-offset-4 col-md-4">
+      <div class="form-register">
+        <form class="form-horizontal" method="post" (ngSubmit)="onSubmitRegistration(f.value)" #f="ngForm">
+        <h2 align="center">Register</h2>
+        <div class="form-group">
+          <div class="cols-lg-10">
+            <div class="input-group">
+              <input type="email"
+                     ngModel required class="form-control"
+                     name="email"
+                     id="email"
+                     email
+                     (change)="checkEmail(f.controls['email'].value)"
+                     placeholder="E-mail"/>
+                     <!--pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$"-->
+
+            </div>
+            <span style="color: red" id="err_span"></span>
+          </div>
+        </div>
+        <div class="form-group">
+        <div class="cols-lg-10">
+          <div class="input-group">
+            <input type="password" ngModel required class="form-control" name="password" id="password"
+                   (keydown)="checkPasswords(f.controls['password'].value, f.controls['repassword'].value)" placeholder="Password"/>
+          </div>
+          <span style="color: red" id="err_pass"></span>
+        </div>
+        </div>
+        <div class="form-group">
+        <div class="cols-lg-10">
+          <div class="input-group">
+            <input type="password" ngModel required class="form-control" name="repassword" id="repassword" (keyup)="checkPasswords(f.controls['password'].value, f.controls['repassword'].value)" placeholder="Repeat Password"/>
+          </div>
+          <span style="color: red" id="err_repass"></span>
+        </div>
+        </div>
+        <div class="form-group">
+          <div class="cols-lg-10">
+            <div class="input-group">
+              <input type="text" ngModel required class="form-control" name="firstName" id="firstName"  placeholder="First name"/>
+            </div>
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="cols-lg-10">
+            <div class="input-group">
+              <input type="text" ngModel required class="form-control" name="lastName" id="lastName"  placeholder="Last name"/>
+            </div>
+          </div>
+          </div>
+        <div class="form-group">
+          <div class="cols-lg-10">
+            <div class="input-group">
+              <input type="text" ngModel required class="form-control" name="phoneNumber" id="phoneNumber"  placeholder="Phone Number"/>
+            </div>
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="cols-lg-10">
+            <div class="input-group">
+              <input type="text" ngModel required class="form-control" name="city" id="city"  placeholder="City"/>
+            </div>
+          </div>
+        </div>
+        <div class="wrapper">
+            <span class="group-btn">
+                <button type="submit" class="btn btn-primary btn-block"  [disabled] = "!f.valid || !canRegister || !canRegisterPasswords">Register</button>
+            </span>
+        </div><br>
+        <div class="wrapper">
+          <a [routerLink]="['']" class="btn btn-outline-dark btn-block">Login</a>
+        </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
