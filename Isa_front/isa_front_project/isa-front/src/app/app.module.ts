@@ -11,7 +11,9 @@ import {FormsModule} from "@angular/forms";
 import {UserService} from "./services/user.service";
 import { EmailComponent } from './components/email/email.component';
 import { ProfileComponent } from './components/profile/profile.component';
-
+import {TabModule} from 'angular-tabs-component';
+import { NavbarComponent } from './components/navbar/navbar.component';
+import { EditUserComponent } from './components/edit-user/edit-user.component';
 
 @NgModule({
   declarations: [
@@ -20,13 +22,16 @@ import { ProfileComponent } from './components/profile/profile.component';
     LoginComponent,
     RegisterComponent,
     EmailComponent,
-    ProfileComponent
+    ProfileComponent,
+    NavbarComponent,
+    EditUserComponent
   ],
   imports: [
     BrowserModule,
     routing,
     FormsModule,
     HttpModule,
+    TabModule
   ],
   providers: [UserService],
   bootstrap: [AppComponent]

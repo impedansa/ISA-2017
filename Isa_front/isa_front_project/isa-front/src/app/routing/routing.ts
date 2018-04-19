@@ -4,6 +4,7 @@ import {RegisterComponent} from "../components/register/register.component";
 import {HomeComponent} from "../components/home/home.component";
 import {EmailComponent} from "../components/email/email.component";
 import {ProfileComponent} from "../components/profile/profile.component";
+import {EditUserComponent} from "../components/edit-user/edit-user.component";
 
 
 const APP_ROUTES: Routes = [
@@ -12,7 +13,8 @@ const APP_ROUTES: Routes = [
   {path: 'home', component: HomeComponent,
     children:[
       {path:'',component:ProfileComponent},
-      {path:'email/:email',component:EmailComponent}
+      {path:'email/:email',component:EmailComponent},
+      {path:'edit',component:EditUserComponent}
       ]}
 
 ];

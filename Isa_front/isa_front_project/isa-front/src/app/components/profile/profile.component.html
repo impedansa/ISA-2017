@@ -1,3 +1,181 @@
-<p>
-  profile works!
-</p>
+<div class="container-fluid" >
+  <div class="container" style="background-color: #d2d2d2;">
+    <div class="row" >
+      <div class="col-lg-12">
+        <div class="card hovercard" style="background-color: #ffffff;">
+          <div class="card-background">
+
+            <!-- http://lorempixel.com/850/280/people/9/ -->
+          </div>
+          <div class="useravatar">
+               <img src="../../../images/avatar.png" alt=""/>
+          </div>
+          <div class="card-info"> <span class="card-title">{{user.firstName + ' ' + user.lastName}}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-12">
+        <div class="container">
+          <div class="row" style="margin-left: 25%;">
+            <hr><hr>
+            <div class="col-md-8" style="margin-right: 25%;">
+              <br>
+              <ul class="nav nav-tabs">
+                <li><button class="btn btn-primary" (click)="showPersonal()">Personal</button></li>&nbsp;&nbsp;
+                <li><button class="btn btn-primary" (click)="showFriends()">Friends</button></li>&nbsp;&nbsp;
+                <li><button class="btn btn-primary" (click)="showRequests()">Friend Requests</button></li>&nbsp;&nbsp;
+                <li><button class="btn btn-primary" (click)="showOther()">People</button></li>
+              </ul>
+            </div>
+          </div>
+          <br>
+          <div class="tab-content">
+            <div id="personal" *ngIf="personal" style="background-color: #ffffff;">
+              <div style="text-align: center;">
+                <h2>Personal information</h2>
+                <hr>
+                <span class="pull-right" style="margin-right: 50px;">
+                  <button class="btn btn-md btn-warning" [routerLink]="['/home/edit']" >Edit Personal Information</button>
+                </span>
+              </div>
+              <div class="row">
+                <div class="col-md-6">
+                  <ul>
+                    <li><h5>First name: </h5><h4>{{user.firstName}}</h4></li>
+                    <li><h5>Last name: </h5><h4>{{user.lastName}}</h4></li>
+                    <li><h5>E-mail: </h5><h4>{{user.email}}</h4></li>
+                    <li><h5>City: </h5><h4>{{user.city}}</h4></li>
+                    <li><h5>Phone number: </h5><h4>{{user.phoneNumber}}</h4></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+              <div id="friends" *ngIf="friends" style="background-color: #fffbff;">
+                <div style="text-align: center;">
+                  <h2>Friends</h2>
+                  <hr>
+                </div>
+                <div class="row">
+                  <input class="form-control" style="width: 400px;margin-left: 30%;" type="search" placeholder="Search" aria-label="Search">
+                </div>
+                <hr>
+                <div class="row" style="margin-top: 20px;">
+                  <div class="col-md-8 offset-md-2" *ngFor="let user of userFriends">
+                  <div class="list-group-item">
+                    <div class="thumbnail">
+                      <div class="row">
+                        <div class="col-sm-4">
+                          <img style="height:140px;width:140px;" class="group list-group-image"
+                               src="../../../images/avatar.png" alt=""/>
+                        </div>
+                        <div class="col-sm-8">
+                          <div>
+                            <div class="panel panel-default">
+                              <div style="margin-left: 125px;">
+                                <div class="panel-heading">Name: {{user.firstName}}</div>
+                                <div class="panel-body">Surname: {{user.lastName}} </div>
+                                <div class="panel-footer">Email: {{user.email}}</div>
+                              </div>
+                              <br>
+                              <div align="center" style="padding-bottom: 20px; margin-left: 10px;">
+                                <button class="btn btn-danger" (click)="deleteFriend(user)"> Delete friend</button>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div id="other" *ngIf="other" style="background-color: #fffbff;">
+            <div style="text-align: center;">
+              <h2>People</h2>
+              <hr>
+            </div>
+            <div class="row">
+              <input class="form-control" style="width: 400px;margin-left: 30%;" type="search" placeholder="Search" aria-label="Search">
+            </div>
+                <hr>
+            <div class="row" style="margin-top: 20px;">
+              <div class="col-md-8 offset-md-2" *ngFor="let user of people">
+                <div class="list-group-item">
+                  <div class="thumbnail">
+                    <div class="row">
+                      <div class="col-sm-4">
+                        <img style="height:140px;width:140px;" class="group list-group-image"
+                             src="../../../images/user.png" alt=""/>
+                      </div>
+                      <div class="col-sm-8">
+                        <div>
+                          <div class="panel panel-default">
+                            <div style="margin-left: 125px;">
+                              <div class="panel-heading">Name: {{user.firstName}}</div>
+                              <div class="panel-body">Surname: {{user.lastName}} </div>
+                              <div class="panel-footer">Email: {{user.email}}</div>
+                            </div>
+                            <br>
+                            <div align="center" style="padding-bottom: 20px">
+                              <button type="button" class="btn btn-success norMouse" style="margin-right: 70px;" (click)="sendRequest(user)"> Send request</button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+            <div id="requests" *ngIf="requests" style="background-color: #fffbff;">
+              <div style="text-align: center;">
+                <h2>Friend Requests</h2>
+                <hr>
+              </div>
+              <div class="row">
+                <input class="form-control" style="width: 400px;margin-left: 30%;" type="search" placeholder="Search" aria-label="Search">
+                <hr>
+                <br>
+              </div>
+              <hr>
+              <div class="row" style="margin-top: 20px;">
+                <div class="col-md-8 offset-md-2" *ngFor="let user of userRequests">
+                  <div class="list-group-item">
+                    <div class="thumbnail">
+                      <div class="row">
+                        <div class="col-sm-4">
+                          <img style="height:140px;width:140px;" class="group list-group-image"
+                               src="../../../images/user.png" alt=""/>
+                        </div>
+                        <div class="col-sm-8">
+                          <div>
+                            <div class="panel panel-default">
+                              <div style="margin-left: 125px;">
+                                <div class="panel-heading">Name: {{user.firstName}}</div>
+                                <div class="panel-body">Surname: {{user.lastName}} </div>
+                                <div class="panel-footer">Email: {{user.email}}</div>
+                              </div>
+                              <br>
+                              <div align="center" style="padding-bottom: 20px">
+                                <button type="button" class="btn btn-success norMouse" style="margin-right: 70px;" (click)="acceptRequest(user)"> Accept request</button>
+                                <button type="button" class="btn btn-danger norMouse" style="margin-right: 70px;" (click)="declineRequest(user)"> Decline request</button>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
