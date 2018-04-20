@@ -14,6 +14,11 @@ import { ProfileComponent } from './components/profile/profile.component';
 import {TabModule} from 'angular-tabs-component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { EditUserComponent } from './components/edit-user/edit-user.component';
+import { CinemaComponent } from './components/cinema/cinema.component';
+import { TheatreComponent } from './components/theatre/theatre.component';
+import {LocationService} from "./services/location.service";
+import { HistoryComponent } from './components/history/history.component';
+import { ReservationsComponent } from './components/reservations/reservations.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +29,11 @@ import { EditUserComponent } from './components/edit-user/edit-user.component';
     EmailComponent,
     ProfileComponent,
     NavbarComponent,
-    EditUserComponent
+    EditUserComponent,
+    CinemaComponent,
+    TheatreComponent,
+    HistoryComponent,
+    ReservationsComponent
   ],
   imports: [
     BrowserModule,
@@ -33,7 +42,7 @@ import { EditUserComponent } from './components/edit-user/edit-user.component';
     HttpModule,
     TabModule
   ],
-  providers: [UserService],
+  providers: [UserService, LocationService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

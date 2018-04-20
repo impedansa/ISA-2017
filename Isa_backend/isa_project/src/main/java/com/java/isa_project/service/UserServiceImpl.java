@@ -208,6 +208,7 @@ public class UserServiceImpl implements UserService {
 	public void editPersonalInfo(User user) {
 		User u = this.userCrudRepository.findByEmail(user.getEmail());
 		user.setId(u.getId());
+		user.setEmailConfirmed(u.isEmailConfirmed());
 		this.userCrudRepository.save(user);
 	}
 

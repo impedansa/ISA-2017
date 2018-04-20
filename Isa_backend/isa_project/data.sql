@@ -1,0 +1,108 @@
+
+
+insert into location values (1, 'address1', 'descrption1', 'name1', 0);
+insert into location values (2, 'address2', 'descrption2', 'name2', 0);
+insert into location values (3, 'address3', 'descrption3', 'name3', 0);
+insert into location values (4, 'address4', 'descrption4', 'name4', 0);
+insert into location values (5, 'address5', 'descrption5', 'name5', 1);
+insert into location values (6, 'address6', 'descrption6', 'name6', 1);
+insert into location values (7, 'address7', 'descrption7', 'name7', 1);
+insert into location values (8, 'address8', 'descrption8', 'name8', 1);
+
+insert into projection values(1,3,'desc1', 'dir1', 120, 'genre1', null, 'name1', 50, 0, 1);
+insert into projection values(2,2,'desc2', 'dir2', 94, 'genre2', null, 'name2', 60, 0, 1);
+insert into projection values(3,4,'desc3', 'dir3', 110, 'genre3', null, 'name3', 70, 0, 2);
+insert into projection values(4,5,'desc4', 'dir4', 118, 'genre4', null, 'name4', 150, 0, 2);
+insert into projection values(5,1,'desc5', 'dir5', 111, 'genre5', null, 'name5', 250, 0, 3);
+insert into projection values(6,4,'desc6', 'dir6', 120, 'genre6', null, 'name6', 350, 0, 3);
+insert into projection values(7,3,'desc7', 'dir7', 129, 'genre7', null, 'name7', 450, 0, 4);
+insert into projection values(8,2,'desc8', 'dir8', 133, 'genre8', null, 'name8', 550, 0, 4);
+insert into projection values(9,2,'desc9', 'dir9', 140, 'genre9', null, 'name9', 520, 1, 5);
+insert into projection values(10,5,'desc10', 'dir10', 102, 'genre10', null, 'name10', 350, 1, 5);
+insert into projection values(11,5,'desc11', 'dir11', 113, 'genre11', null, 'name11', 400, 1, 6);
+insert into projection values(12,4,'desc12', 'dir12', 104, 'genre12', null, 'name12', 230, 1, 6);
+insert into projection values(13,3,'desc13', 'dir13', 100, 'genre13', null, 'name13', 220, 1, 6);
+insert into projection values(14,1,'desc14', 'dir14', 90, 'genre14', null, 'name14', 440, 1, 7);
+insert into projection values(15,2,'desc15', 'dir15', 140, 'genre15', null, 'name15', 444, 1, 8);
+insert into projection values(16,3,'desc16', 'dir16', 110, 'genre16', null, 'name16', 505, 1, 8);
+
+insert into projection_time values(1, '2018-02-21 20:00:00');
+insert into projection_time values(2, '2018-04-20 19:00:00');
+insert into projection_time values(3, '2018-05-23 22:00:00');
+insert into projection_time values(4, '2018-04-10 23:00:00');
+insert into projection_time values(5, '2018-06-11 21:30:00');
+insert into projection_time values(6, '2018-02-02 20:45:00');
+insert into projection_time values(7, '2018-05-12 22:30:00');
+insert into projection_time values(8, '2018-02-22 20:15:00');
+insert into projection_time values(9, '2018-03-19 23:00:00');
+insert into projection_time values(10, '2018-03-11 18:00:00');
+insert into projection_time values(11, '2018-03-04 19:30:00');
+insert into projection_time values(12, '2018-04-22 22:00:00');
+
+insert into projection_time_projection values (1,1);
+insert into projection_time_projection values (3,2);
+insert into projection_time_projection values (4,3);
+insert into projection_time_projection values (11,4);
+insert into projection_time_projection values (2,5);
+insert into projection_time_projection values (10,6);
+insert into projection_time_projection values (12,6);
+insert into projection_time_projection values (8,10);
+insert into projection_time_projection values (6,12);
+insert into projection_time_projection values (7,12);
+insert into projection_time_projection values (2,13);
+insert into projection_time_projection values (5,13);
+insert into projection_time_projection values (10,14);
+insert into projection_time_projection values (11,15);
+insert into projection_time_projection values (1,16);
+insert into projection_time_projection values (4,7);
+insert into projection_time_projection values (11,8);
+insert into projection_time_projection values (2,9);
+
+insert into projection_room values (1,'name1');
+insert into projection_room values (2,'name2');
+insert into projection_room values (3,'name3');
+insert into projection_room values (4,'name4');
+insert into projection_room values (5,'name5');
+insert into projection_room values (6,'name6');
+insert into projection_room values (7,'name7');
+insert into projection_room values (8,'name8');
+insert into projection_room values (9,'name9');
+
+insert into projection_room_projection_time values (1,1);
+insert into projection_room_projection_time values (2,2);
+insert into projection_room_projection_time values (3,3);
+insert into projection_room_projection_time values (4,4);
+insert into projection_room_projection_time values (5,5);
+insert into projection_room_projection_time values (6,6);
+insert into projection_room_projection_time values (7,7);
+insert into projection_room_projection_time values (8,8);
+insert into projection_room_projection_time values (9,9);
+insert into projection_room_projection_time values (1,10);
+insert into projection_room_projection_time values (3,11);
+insert into projection_room_projection_time values (8,11);
+
+insert into projection_room_seat values (1, 110, 202, 1);
+insert into projection_room_seat values (2, 102, 210, 2);
+insert into projection_room_seat values (3, 101, 240, 3);
+insert into projection_room_seat values (4, 99, 200, 4);
+insert into projection_room_seat values (5, 88, 120, 5);
+insert into projection_room_seat values (6, 77, 130, 6);
+insert into projection_room_seat values (7, 66, 140, 7);
+insert into projection_room_seat values (8, 55, 120, 8);
+insert into projection_room_seat values (9, 44, 120, 1);
+insert into projection_room_seat values (10, 155, 20, 2);
+insert into projection_room_seat values (11, 11, 40, 3);
+insert into projection_room_seat values (12, 22,520, 4);
+insert into projection_room_seat values (13, 44, 270, 5);
+insert into projection_room_seat values (14, 30, 66, 6);
+insert into projection_room_seat values (15, 91, 44, 7);
+insert into projection_room_seat values (16, 88, 23, 8);
+insert into projection_room_seat values (17, 66, 99, 1);
+insert into projection_room_seat values (18, 45, 140, 2);
+insert into projection_room_seat values (19, 120, 220, 3);
+insert into projection_room_seat values (20, 44, 90, 4);
+insert into projection_room_seat values (21, 13, 440, 5);
+insert into projection_room_seat values (22, 50, 55, 6);
+insert into projection_room_seat values (23, 80, 66, 7);
+insert into projection_room_seat values (24, 101, 10, 8);
+

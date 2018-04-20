@@ -1,0 +1,35 @@
+<div class="container-fluid">
+  <br>
+  <div class="row">
+    <div class="col-md-2 offset-md-5">
+      <h2>Theaters</h2>
+    </div>
+    <hr>
+  </div>
+  <hr>
+  <div class="row">
+    <div class="row" style="margin-top: 20px;">
+      <div class="col-md-8 offset-md-2" *ngFor="let location of locations">
+        <div class="list-group-item">
+          <div class="thumbnail">
+            <div class="row">
+              <div class="col-sm-12">
+                <div class="panel panel-default">
+                  <div style="margin-left: 125px;">
+                    <div class="panel-heading">
+                      Cinema name: {{location?.name}}
+                      <button class="btn btn-success pull-right">Reserve Projection</button>
+                    </div>
+                    <div class="panel-body">Cinema address: {{location?.address}} </div>
+                    <div class="panel-footer">Cinema description: {{location?.description}}</div>
+                  </div>
+                  <br>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

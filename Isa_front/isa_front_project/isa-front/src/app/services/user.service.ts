@@ -34,7 +34,6 @@ export class UserService {
   }
 
   getUser(){
-    console.log('get userrrrrr');
     return this.http.get(this.path + 'getUser', {withCredentials : true});
   }
 
