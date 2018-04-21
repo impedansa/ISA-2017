@@ -1,0 +1,67 @@
+<div class="container-fluid">
+  <br>
+  <div class="row">
+    <div class="col-md-4 offset-md-4" style="margin-left: 40%;">
+      <h2>Reserve Projection</h2>
+    </div>
+    <hr>
+  </div>
+  <hr>
+  <br>
+  <div class="row">
+    <div class="col-md-4 offset-md-2">
+      <ul>
+        <li><h5>Location name: {{location?.name}}</h5> </li>
+        <li><h5>Location type: {{location?.locationType}}</h5> </li>
+        <li><h5>Location address: {{location?.address}}</h5> </li>
+        <li><h5>Location description: {{location?.description}}</h5></li>
+      </ul>
+    </div>
+    <hr>
+  </div>
+  <hr>
+  <div *ngIf="times">
+    <div class="col-md-8 offset-md-2" *ngFor="let projectionTime of projectionTimes">
+        <div class="row">
+          <div class="col-md-6"><h4 class="pull-middle">Possible times for the chosen projection</h4></div>
+           <div class="col-md-6"><button style="margin-bottom: 40px;" (click)="closeTimes()" class="btn btn-md btn-danger pull-right">Close</button></div>
+        </div>
+      <hr>
+      <div>
+        <div class="row">
+          <div class="col-md-6"><h5>Projection time number: {{projectionTime?.id}}</h5></div>
+          <div class="col-md-6"><button class="btn btn-primary btn-md pull-right" (click)="reserveSeat(projectionTime)">Reserve seat</button> </div>
+        </div>
+        <h5>Projection time date and time: {{projectionTime?.time | date:'yyyy-MM-dd HH:mm:ss'}}</h5>
+      </div>
+      <hr>
+    </div>
+  </div>
+  <div class="row">
+    <div class="row" style="margin-top: 20px;">
+      <div class="col-md-12 offset-md-4" *ngFor="let projection of location.projections">
+        <div class="list-group-item">
+          <div class="thumbnail">
+            <div class="row">
+              <div class="col-sm-12">
+                <div class="panel panel-default">
+                  <div style="margin-left: 125px;">
+                    <div class="panel-heading">
+                      Projection name: {{projection?.name}}
+                      <button class="btn btn-success pull-right" (click)="chooseProjection(projection)">Choose</button>
+                    </div>
+                    <div class="panel-body">Projection director: {{projection?.director}} </div>
+                    <div class="panel-footer">Projection genre: {{projection?.genre}}</div>
+                    <div class="panel-footer">Projection type: {{projection?.projectionType}}</div>
+                    <div class="panel-footer">Projection price: {{projection?.price}}</div>
+                  </div>
+                  <br>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -81,7 +81,7 @@ public class UserController {
 	
 	@RequestMapping(value = "/getFriends", method = RequestMethod.GET)
 	public List<User> getFriends(HttpServletRequest request) {
-		logger.info("email friends");
+		logger.info("friends");
 		User user = (User) request.getSession().getAttribute("user");
 		return this.userService.getFriends(user.getEmail());
 	}

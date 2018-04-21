@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {LocationService} from "../../services/location.service";
+import {Reservation} from "../../beans/reservation";
 
 @Component({
   selector: 'app-reservations',
@@ -7,9 +9,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ReservationsComponent implements OnInit {
 
-  constructor() { }
+  private reservations: Reservation[] = [];
+
+  constructor(private locationService: LocationService) { }
 
   ngOnInit() {
+    this.locationService.getActiveReservations().subscribe(
+      (data) => {
+        this.reservations = JSON.parse(data['_body']);
+        console.log(this.reservations);
+      }
+    );
   }
-
 }

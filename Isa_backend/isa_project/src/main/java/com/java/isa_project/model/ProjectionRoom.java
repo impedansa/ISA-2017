@@ -22,6 +22,7 @@ public class ProjectionRoom {
 	@Column(nullable = false)
 	private String name;
 	
+	
 	@ManyToMany(targetEntity = ProjectionTime.class)
 	private List<ProjectionTime> projectionTime;
 }

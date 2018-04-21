@@ -1,3 +1,91 @@
-<p>
-  reservations works!
-</p>
+<!--
+<div class="container-fluid">
+  <br>
+  <div class="row">
+    <div class="col-md-4 offset-md-4" style="margin-left: 40%;">
+      <h2>Active reservations</h2>
+    </div>
+    <hr>
+  </div>
+  <hr>
+  <br>
+
+  <div class="row" style="margin-left: 35%;width: 800px;">
+    <div class="row" style="margin-top: 20px;" *ngFor="let reservation of reservations">
+      <div class="col-md-12" style="margin-left: 20%;">
+        <div class="list-group-item">
+          <div class="thumbnail">
+            <div class="row" >
+              <div class="col-sm-8">
+                <div class="panel panel-default">
+                  <div>
+                    <div class="panel-heading">
+                      Projection name: {{reservation.projection.name}}
+                      <div class="pull-right"><button class="btn btn-danger pull-right">Cancel</button></div>
+                    </div>
+                    <div class="panel-body">Projection director:  {{reservation.projection.director}}</div>
+                    <div class="panel-footer">Projection genre: {{reservation.projection.genre}}</div>
+                    <div class="panel-footer">Projection type: {{reservation.projection.type}}</div>
+                    <div class="panel-footer">Projection price: {{reservation.projection.price}}</div>
+                    <div class="panel-footer">Projection time: {{reservation.projectionTime.time | date:'yyyy-MM-dd HH:mm:ss'}}</div>
+                  </div>
+                  <br>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+-->
+<div class="container-fluid">
+  <br>
+  <div class="row">
+    <div class="col-md-4 offset-md-5">
+      <h2>Active Reservations</h2>
+    </div>
+    <hr>
+  </div>
+  <hr>
+  <br>
+  <div class="row">
+    <div class="col-md-5 offset-md-4" style="margin-left: 38%;">
+      <div class="row">
+        <input class="form-control" style="width: 400px;" type="search" placeholder="Search" aria-label="Search">
+      </div>
+    </div>
+    <hr>
+  </div>
+  <hr>
+  <div class="row">
+    <div class="row" style="margin-top: 20px;margin-left: 27%;">
+      <div class="col-md-12 offset-md-2" *ngFor="let reservation of reservations">
+        <div class="list-group-item">
+          <div class="thumbnail">
+            <div class="row">
+              <div class="col-sm-12">
+                <div class="panel panel-default">
+                  <div style="width: 500px;">
+                    <div class="panel-heading">
+                    Projection name: {{reservation.projection.name}}
+                    <div class="pull-right"><button class="btn btn-danger pull-right">Cancel</button></div>
+                  </div>
+                    <div class="panel-body">Projection director:  {{reservation.projection.director}}</div>
+                    <div class="panel-body">Projection genre: {{reservation.projection.genre}}</div>
+                    <div class="panel-body">Projection type: {{reservation.projection.type}}</div>
+                    <div class="panel-footer">Projection price: {{reservation.projection.price}}</div>
+                    <div class="panel-footer">Projection time: {{reservation.projectionTime.time | date:'yyyy-MM-dd HH:mm:ss'}}</div>
+                  </div>
+                  <br>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+

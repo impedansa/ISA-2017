@@ -3,4 +3,5 @@ export class ProjectionTime{
   public id: number;
   public time: Date;
   public projection: Projection[] = [];
+  public numOfReservedSeats: number;
 }

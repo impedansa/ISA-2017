@@ -1,0 +1,48 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-4 offset-md-4" style="margin-left: 40%;">
+      <h2>Please invite {{numOfFriendsToInvite}} friends</h2>
+      <button class="btn btn-md btn-warning" style="width: 200px;margin-left: 17%" (click)="reset()">Reset</button>
+    </div>
+    <hr>
+  </div>
+  <div class="row" *ngIf="invited">
+    <div class="col-md-4 offset-md-4" style="margin-left: 40%;">
+      <button class="btn btn-md btn-success" style="width: 200px;margin-left: 140%" (click)="finish()">Finish reservation</button>
+    </div>
+    <hr>
+  </div>
+  <br><hr><br>
+  <div class="row" style="margin-left: 25%;" *ngIf="!invited">
+    <div class="offset-md-3 col-md-6" *ngFor="let user of friends" style="margin-left: 10%;">
+      <div class="list-group-item">
+        <div class="thumbnail">
+          <div class="row">
+            <div class="col-sm-4">
+              <img style="height:140px;width:140px;" class="group list-group-image"
+                   src="../../../images/avatar.png" alt=""/>
+            </div>
+           <div class="col-sm-8">
+              <div>
+                <div class="panel panel-default">
+                  <div style="margin-left: 125px;">
+                    <div class="panel-heading">Name: {{user.firstName}}</div>
+                    <div class="panel-body">Surname: {{user.lastName}} </div>
+                    <div class="panel-footer">Email: {{user.email}}</div>
+                  </div>
+                  <br>
+                  <div align="center" style="padding-bottom: 20px; margin-left: 10px;">
+                    <button class="btn btn-primary" (click)="inviteFriends(user)"> Invite</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div><br>
+    </div>
+  </div>
+</div>
+
+
+

@@ -9,11 +9,16 @@ import {CinemaComponent} from "../components/cinema/cinema.component";
 import {TheatreComponent} from "../components/theatre/theatre.component";
 import {ReservationsComponent} from "../components/reservations/reservations.component";
 import {HistoryComponent} from "../components/history/history.component";
+import {ReserveComponent} from "../components/reserve/reserve.component";
+import {GraphicReserveComponent} from "../components/graphic-reserve/graphic-reserve.component";
+import {FinishReservationComponent} from "../components/finish-reservation/finish-reservation.component";
+import {ConfirmReservationComponent} from "../components/confirm-reservation/confirm-reservation.component";
 
 
 const APP_ROUTES: Routes = [
   {path: '', component: LoginComponent},
   {path: 'register', component: RegisterComponent},
+  {path:'confirm-reservation/:email/:pt',component:ConfirmReservationComponent},
   {path: 'home', component: HomeComponent,
     children:[
       {path:'',component:ProfileComponent},
@@ -22,7 +27,11 @@ const APP_ROUTES: Routes = [
       {path:'cinema',component:CinemaComponent},
       {path:'theatre',component:TheatreComponent},
       {path:'reservations',component:ReservationsComponent},
-      {path:'history',component:HistoryComponent}
+      {path:'history',component:HistoryComponent},
+      {path:'reserve',component:ReserveComponent},
+      {path:'seats',component:GraphicReserveComponent},
+      {path:'finish-reservation',component:FinishReservationComponent}
+
       ]}
 
 ];

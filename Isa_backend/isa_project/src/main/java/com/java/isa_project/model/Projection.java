@@ -1,6 +1,7 @@
 package com.java.isa_project.model;
 
 import java.io.File;
+import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -8,6 +9,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
@@ -49,10 +51,13 @@ public class Projection {
 	@Column(nullable = true, unique = false)
 	private float price;
 	
-	@ManyToOne
+/*	@ManyToOne
 	@JoinColumn(name = "location_id")
 	@JsonIgnore
-	private Location location;
+	private Location location;*/
 	
+/*	@ManyToMany(targetEntity = ProjectionTime.class, mappedBy="projection")
+	@JoinColumn()
+	private List<ProjectionTime> projectionTimes;*/
 	
 }

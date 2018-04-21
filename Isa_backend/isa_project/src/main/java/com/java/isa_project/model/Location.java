@@ -33,7 +33,8 @@ public class Location {
 	@Column(nullable = true, unique = false)
 	private String description;
 	
-	@OneToMany(mappedBy = "location")	
+	@OneToMany
+	@JoinColumn(name="location_id")
 	private List<Projection> projections;
 	
 	// ======================== spisak karata sa popustima za brzu rezervaciju 

@@ -10,6 +10,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToMany;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import lombok.Data;
 
 @Entity
@@ -22,6 +24,9 @@ public class ProjectionTime {
 	
 	@Column(nullable = false)
 	private Date time;
+	
+	@Column(nullable = false)
+	private int numOfReservedSeats = 0;
 	
 	@ManyToMany(targetEntity = Projection.class)
 	private List<Projection> projection;

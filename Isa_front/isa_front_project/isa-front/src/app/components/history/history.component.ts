@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {Reservation} from "../../beans/reservation";
+import {LocationService} from "../../services/location.service";
 
 @Component({
   selector: 'app-history',
@@ -6,10 +8,17 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./history.component.css']
 })
 export class HistoryComponent implements OnInit {
+  private reservations: Reservation[] = [];
 
-  constructor() { }
+  constructor(private locationService: LocationService) { }
 
   ngOnInit() {
+    this.locationService.getHistory().subscribe(
+      (data) => {
+        this.reservations = JSON.parse(data['_body']);
+        console.log(this.reservations);
+      }
+    );
   }
 
 }

@@ -1,4 +1,5 @@
 import {Location} from "./location";
+import {ProjectionTime} from "./projectionTime";
 export class Projection{
   public id: number;
   public name: string;
@@ -10,5 +11,5 @@ export class Projection{
   public avgRate: number;
   public description: string;
   public price: number;
-
+  public projectionTimes: ProjectionTime[] = [];
 }

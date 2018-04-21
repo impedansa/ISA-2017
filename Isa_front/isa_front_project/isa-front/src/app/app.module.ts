@@ -19,6 +19,10 @@ import { TheatreComponent } from './components/theatre/theatre.component';
 import {LocationService} from "./services/location.service";
 import { HistoryComponent } from './components/history/history.component';
 import { ReservationsComponent } from './components/reservations/reservations.component';
+import { ReserveComponent } from './components/reserve/reserve.component';
+import { GraphicReserveComponent } from './components/graphic-reserve/graphic-reserve.component';
+import { FinishReservationComponent } from './components/finish-reservation/finish-reservation.component';
+import { ConfirmReservationComponent } from './components/confirm-reservation/confirm-reservation.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +37,11 @@ import { ReservationsComponent } from './components/reservations/reservations.co
     CinemaComponent,
     TheatreComponent,
     HistoryComponent,
-    ReservationsComponent
+    ReservationsComponent,
+    ReserveComponent,
+    GraphicReserveComponent,
+    FinishReservationComponent,
+    ConfirmReservationComponent
   ],
   imports: [
     BrowserModule,

@@ -7,6 +7,16 @@
     <hr>
   </div>
   <hr>
+  <br>
+  <div class="row">
+    <div class="col-md-4 offset-md-4">
+      <div class="row">
+        <input class="form-control" style="width: 400px;" type="search" placeholder="Search" aria-label="Search">
+      </div>
+    </div>
+    <hr>
+  </div>
+  <hr>
   <div class="row">
     <div class="row" style="margin-top: 20px;">
       <div class="col-md-8 offset-md-2" *ngFor="let location of locations">
@@ -17,11 +27,11 @@
                 <div class="panel panel-default">
                   <div style="margin-left: 125px;">
                     <div class="panel-heading">
-                      Cinema name: {{location?.name}}
-                      <button class="btn btn-success pull-right">Reserve Projection</button>
+                      Theatre name: {{location?.name}}
+                      <button class="btn btn-success pull-right" (click)="reserveProjection(location)">Reserve Projection</button>
                     </div>
-                    <div class="panel-body">Cinema address: {{location?.address}} </div>
-                    <div class="panel-footer">Cinema description: {{location?.description}}</div>
+                    <div class="panel-body">Theatre address: {{location?.address}} </div>
+                    <div class="panel-footer">Theatre description: {{location?.description}}</div>
                   </div>
                   <br>
                 </div>

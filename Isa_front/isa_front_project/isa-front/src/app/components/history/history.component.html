@@ -1,3 +1,39 @@
-<p>
-  history works!
-</p>
+<div class="container-fluid">
+  <br>
+  <div class="row">
+    <div class="col-md-4 offset-md-4" style="margin-left: 40%;">
+      <h2>History of reservations</h2>
+    </div>
+    <hr>
+  </div>
+  <hr>
+  <br>
+
+  <div class="row">
+    <div class="row" style="margin-top: 20px;" *ngFor="let reservation of reservations">
+      <div class="col-md-12 offset-md-4" >
+        <div class="list-group-item">
+          <div class="thumbnail">
+            <div class="row">
+              <div class="col-sm-12">
+                <div class="panel panel-default">
+                  <div style="margin-left: 125px;">
+                    <div class="panel-heading">
+                      Projection name: {{reservation.projection.name}}
+                    </div>
+                    <div class="panel-body">Projection director:  {{reservation.projection.director}}</div>
+                    <div class="panel-footer">Projection genre: {{reservation.projection.genre}}</div>
+                    <div class="panel-footer">Projection type: {{reservation.projection.type}}</div>
+                    <div class="panel-footer">Projection price: {{reservation.projection.price}}</div>
+                    <div class="panel-footer">Projection time: {{reservation.projectionTime.time | date:'yyyy-MM-dd HH:mm:ss'}}</div>
+                  </div>
+                  <br>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
