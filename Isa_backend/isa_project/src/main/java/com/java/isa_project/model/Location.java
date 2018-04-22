@@ -37,5 +37,15 @@ public class Location {
 	@JoinColumn(name="location_id")
 	private List<Projection> projections;
 	
+	public Location(long id, String name, LocationType locationType, String address, String description, List<Projection> projections) {
+		this.id = id;
+		this.name = name;
+		this.locationType = locationType;
+		this.address = address;
+		this.description = description;
+		this.projections = projections;
+	}
+	
+	public Location() {}
 
 }

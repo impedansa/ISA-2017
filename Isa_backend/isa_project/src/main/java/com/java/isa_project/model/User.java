@@ -40,4 +40,18 @@ public class User implements Serializable{
 	
 	@Column(nullable = false)
 	private boolean emailConfirmed = false;
+
+	public User() {}
+	
+	public User(long id, String email, String password, String firstName, String lastName, String city,
+			String phoneNumber, boolean emailConfirmed) {
+		this.id = id;
+		this.email = email;
+		this.password = password;
+		this.firstName = firstName;
+		this.lastName = lastName;
+		this.city = city;
+		this.phoneNumber = phoneNumber;
+		this.emailConfirmed = emailConfirmed;
+	}
 }
