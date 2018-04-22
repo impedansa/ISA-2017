@@ -29,7 +29,7 @@ import com.java.isa_project.service.LocationService;
 @RequestMapping("/location")
 public class LocationController {
 
-private static final Logger logger = LoggerFactory.getLogger(UserController.class);
+	private static final Logger logger = LoggerFactory.getLogger(UserController.class);
 	
 	private LocationService locationService;
 	
@@ -111,4 +111,12 @@ private static final Logger logger = LoggerFactory.getLogger(UserController.clas
 		User user = (User) request.getSession().getAttribute("user");
 		return this.locationService.getActiveReservations(user.getEmail());
 	}
+	
+	@RequestMapping(value = "/cancelReservation", method = RequestMethod.POST, 
+			consumes = MediaType.APPLICATION_JSON)
+	public boolean cancelReservation(@RequestBody Reservation reservation, HttpServletRequest request) {
+		logger.info("cancel reservation");
+		return this.locationService.cancelReservation(reservation);
+	}
+	
 }

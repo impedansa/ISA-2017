@@ -2,6 +2,8 @@ package com.java.isa_project.service;
 
 import java.util.List;
 
+import javax.servlet.Registration;
+
 import com.java.isa_project.model.Location;
 import com.java.isa_project.model.LocationType;
 import com.java.isa_project.model.Projection;
@@ -22,4 +24,5 @@ public interface LocationService {
 	boolean confirmReservation(Reservation reservation);
 	List<Reservation> getHistoroy(String email);
 	List<Reservation> getActiveReservations(String email);
+	boolean cancelReservation(Reservation reservation);
 }

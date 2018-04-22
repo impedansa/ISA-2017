@@ -60,17 +60,18 @@
   </div>
   <hr>
   <div class="row">
-    <div class="row" style="margin-top: 20px;margin-left: 27%;">
+    <div class="row" style="margin-top: 20px;margin-left: 18%;">
       <div class="col-md-12 offset-md-2" *ngFor="let reservation of reservations">
         <div class="list-group-item">
           <div class="thumbnail">
             <div class="row">
-              <div class="col-sm-12">
+              <div class="col-lg-12">
                 <div class="panel panel-default">
-                  <div style="width: 500px;">
+                  <div style="width: 300px;">
                     <div class="panel-heading">
-                    Projection name: {{reservation.projection.name}}
-                    <div class="pull-right"><button class="btn btn-danger pull-right">Cancel</button></div>
+                      <div class="row">
+                        <div class="col-md-6">Projection name: {{reservation.projection.name}}</div>
+                      </div>
                   </div>
                     <div class="panel-body">Projection director:  {{reservation.projection.director}}</div>
                     <div class="panel-body">Projection genre: {{reservation.projection.genre}}</div>
@@ -78,6 +79,7 @@
                     <div class="panel-footer">Projection price: {{reservation.projection.price}}</div>
                     <div class="panel-footer">Projection time: {{reservation.projectionTime.time | date:'yyyy-MM-dd HH:mm:ss'}}</div>
                   </div>
+                  <div class="col-md-6" style="margin-top: 5%; margin-left: -3%;"><button class="btn btn-danger" (click)="cancelReservation(reservation)">Cancel Reservation</button></div>
                   <br>
                 </div>
               </div>

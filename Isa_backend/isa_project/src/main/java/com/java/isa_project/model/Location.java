@@ -37,6 +37,5 @@ public class Location {
 	@JoinColumn(name="location_id")
 	private List<Projection> projections;
 	
-	// ======================== spisak karata sa popustima za brzu rezervaciju 
 
 }

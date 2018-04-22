@@ -76,4 +76,10 @@ export class LocationService {
   getActiveReservations(){
     return this.http.get(this.path + '/activeReservations', {withCredentials: true});
   }
+
+  cancelReservation(reservation: Reservation){
+    let h = new Headers();
+    h.append('Content-type','application/json');
+    return this.http.post(this.path + 'cancelReservation', JSON.stringify(reservation), { headers : h, withCredentials : true });
+  }
 }

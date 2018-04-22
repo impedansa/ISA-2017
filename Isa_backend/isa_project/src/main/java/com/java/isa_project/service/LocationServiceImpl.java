@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
+import static java.util.concurrent.TimeUnit.*;
+
 import javax.transaction.Transactional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -165,5 +167,18 @@ public class LocationServiceImpl implements LocationService {
 		}
 		return active;
 	}
+
+	@Override
+	public boolean cancelReservation(Reservation reservation) {
+		long MAX_DURATION = MILLISECONDS.convert(30, MINUTES);
+		long duration = reservation.getProjectionTime().getTime().getTime() - new Date().getTime();
+		if(duration >= MAX_DURATION) {
+			Reservation r = this.reservationCrudRepository.findById(reservation.getId()).get();
+			this.reservationCrudRepository.delete(r);
+			return true;
+		}
+		return false;
+	}
+
 
 }
